@@ -45,6 +45,11 @@ dbConnect();
 
 app.use('/auth', authRoutes);
 
+app.get("/",authMiddleware, (req, res) => {
+    res.redirect("/index");
+}
+);
+
 // Oturum kontrolü gerektiren endpointler
 app.get('/index', authMiddleware, (req, res) => 
     res.render('index', { title: 'Home' })
@@ -82,6 +87,12 @@ app.get('/login', (req, res) =>
 app.get('/register', (req, res) => 
   res.render('register')
 );
+app.get('/', (req, res) => {
+    res.redirect('/login'); // veya res.render('index');
+});
+app.get('/forgotPassword', (req, res) => {
+    res.render('forgotPassword');
+});
 app.listen(PORT, () =>
     console.log(`Example app listening on port ${PORT}!`
 ));
