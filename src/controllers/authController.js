@@ -77,7 +77,7 @@ exports.logout = (req, res) => {
       if (err) {
         return res.status(500).json({ message: "Çıkış yapılamadı." });
       }
-      res.json({ message: "Başarıyla çıkış yapıldı." });
+      res.redirect('/login');
     });
   } catch (error) {
     res.status(500).json({ message: "Sunucu hatası, tekrar deneyin.", error: error.message });
