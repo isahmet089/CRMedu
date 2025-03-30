@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
+    data-template="vertical-menu-template-free">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>User List</title>
+
+    <meta name="description" content="" />
+    <%- include('partials/style') %>
+
+</head>
+
+<body>
+    <%- include('partials/sidebar') %>
+    <div class="layout-page">
+        <%- include('partials/navbar') %>
+        <div class="content-wrapper">
+            <div class="container-xxl flex-grow-1 container-p-y">
+                <div class="row">
+                    <div class="">
+                        <div class="card mb-4 container">
+                            <h5 class="card-header">User List</h5>
+                            <div class="card-body">
+                            <div class="table-responsive text-nowrap">
+                                <div class="container">
+                                    <input type="text" id="aramaGirdisi" class="form-control mb-3" placeholder="Kullanıcı Ara...">
+                                </div>
+                                
+                                <table class="table table-bordered" id="kullaniciTablosu"> <thead>
+                                        <tr>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Email</th>
+                                            <th>Role</th>
+                                            <th>Verified</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="table-border-bottom-0">
+                                        <tr>
+                                            <td>Ahmet</td>
+                                            <td>Yılmaz</td>
+                                            <td>ahmet.yilmaz@example.com</td>
+                                            <td>student</td>
+                                            <td>Yes</td>
+                                            <td><button type="button" class="btn btn-primary">Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ayşe</td>
+                                            <td>Demir</td>
+                                            <td>ayse.demir@example.com</td>
+                                            <td>instructor</td>
+                                            <td>No</td>
+                                            <td><button type="button" class="btn btn-primary">Edit</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <%- include('partials/footer') %>
+            <div class="content-backdrop fade"></div>
+        </div>
+        <div class="layout-overlay layout-menu-toggle"></div>
+
+    </div>
+    <%- include('partials/script') %>
+</body>
+
+</html>
+
+<script>
+    document.getElementById('aramaGirdisi').addEventListener('keyup', function() {
+        let aramaMetni = this.value.toLowerCase();
+        let tablo = document.getElementById('kullaniciTablosu');
+        let satirlar = tablo.getElementsByTagName('tr');
+
+        for (let i = 1; i < satirlar.length; i++) { // Başlık satırını atla
+            let hucreler = satirlar[i].getElementsByTagName('td');
+            let bulundu = false;
+            for (let j = 0; j < hucreler.length; j++) {
+                if (hucreler[j].textContent.toLowerCase().indexOf(aramaMetni) > -1) {
+                    bulundu = true;
+                    break;
+                }
+            }
+            satirlar[i].style.display = bulundu ? "" : "none";
+        }
+    });
+</script>

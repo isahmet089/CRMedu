@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
+    data-template="vertical-menu-template-free">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Documentation</title>
+
+    <meta name="description" content="" />
+    <%- include('partials/style') %>
+
+</head>
+
+<body>
+    <!--sidebar-->
+    <%- include('partials/sidebar') %>
+        <!--sidebar end  -->
+
+        <div class="layout-page">
+            <!-- Navbar -->
+            <%- include('partials/navbar') %>
+                <!-- / Navbar -->
+               <!-- Content wrapper -->
+                <div class="content-wrapper">
+                <div class="container-xxl flex-grow-1 container-p-y">
+                    <div class="row">
+                        <div class="col-md mb-4 mb-md-0">
+                            <small class="text-light fw-semibold">CRMedu Sürümleri</small>
+                            <div class="accordion mt-3" id="crmeduVersions">
+                                <div class="card accordion-item">
+                                    <h2 class="accordion-header" id="headingV1">
+                                        <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordionV1" aria-expanded="true" aria-controls="accordionV1">
+                                            CRMedu V1
+                                        </button>
+                                    </h2>
+                                    <div id="accordionV1" class="accordion-collapse collapse show" data-bs-parent="#crmeduVersions">
+                                        <div class="accordion-body">
+                                            <strong>Temel Özellikler:</strong>
+                                            <ul>
+                                                <li>Müşteri Yönetimi (Liste, Detaylar)</li>
+                                                <li>Kullanıcı Yönetimi (Liste, Detaylar)</li>
+                                                <li>Destek Talebi Oluşturma</li>
+                                            </ul>
+                                            <p>İlk sürüm, temel müşteri ve kullanıcı yönetimi özelliklerini içerir. Destek talepleri de bu sürümde oluşturulabilir.</p>
+                                            <strong>Yeni Özellikler:</strong>
+                                            <ul>
+                                                <li>Öğrenci Bilgileri Yönetimi</li>
+                                                <li>Geliştirilmiş Arama İşlevleri</li>
+                                                <li>Kullanıcı Rolleri ve Yetkilendirme</li>
+                                            </ul>
+                                            <p>Bu sürümde öğrenci bilgileri yönetimi eklendi. Arama işlevleri geliştirildi ve kullanıcı rolleri ile yetkilendirme sistemi uygulandı.</p>
+                                            <strong>Geliştirmeler ve Ek Özellikler:</strong>
+                                            <ul>
+                                                <li>Destek Sistemi İyileştirmeleri (Bildirimler, Takip)</li>
+                                                <li>Raporlama ve Analiz Araçları</li>
+                                                <li>Entegrasyonlar (API, Diğer Sistemler)</li>
+                                            </ul>
+                                            <p>Destek sistemi iyileştirildi, raporlama ve analiz araçları eklendi. API ve diğer sistemlerle entegrasyon özellikleri geliştirildi.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card accordion-item">
+                                    <h2 class="accordion-header" id="headingV2">
+                                        <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionV2" aria-expanded="false" aria-controls="accordionV2">
+                                            CRMedu V2
+                                        </button>
+                                    </h2>
+                                    <div id="accordionV2" class="accordion-collapse collapse" aria-labelledby="headingV2" data-bs-parent="#crmeduVersions">
+                                        <div class="accordion-body">
+                                            <strong>Yakında..</strong>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card accordion-item">
+                                    <h2 class="accordion-header" id="headingV3">
+                                        <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionV3" aria-expanded="false" aria-controls="accordionV3">
+                                            CRMedu V3
+                                        </button>
+                                    </h2>
+                                    <div id="accordionV3" class="accordion-collapse collapse" aria-labelledby="headingV3" data-bs-parent="#crmeduVersions">
+                                        <div class="accordion-body">
+                                            <strong>Yakında..</strong>
+                                        
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Footer -->
+                <%- include('partials/footer') %>
+                    <!-- / Footer -->
+                    <div class="content-backdrop fade"></div>
+        </div>
+        <!-- / Layout page -->
+        <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+
+        </div>
+        <!-- / Layout wrapper -->
+
+        <%- include('partials/script') %>
+</body>
+
+</html>

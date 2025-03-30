@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
+    data-template="vertical-menu-template-free">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Support Page</title>
+
+    <meta name="description" content="" />
+    <%- include('partials/style') %>
+
+</head>
+
+<body>
+    <!--sidebar-->
+    <%- include('partials/sidebar') %>
+        <!--sidebar end  -->
+
+        <div class="layout-page">
+            <!-- Navbar -->
+            <%- include('partials/navbar') %>
+                <!-- / Navbar -->
+               <!-- Content wrapper -->
+                <div class="content-wrapper">
+                <div class="container-xxl flex-grow-1 container-p-y">   
+                    <div class="row">
+                        <div class="col-lg-12 mb-4 order-0">
+                            <div class="card mb-4">
+                                <h5 class="card-header">Destek Talebi Oluştur <br> (Belli bir süre site geliştirme aşamasında olucak, bu yuzden herhangi bir hata bug, veya eklenmesi gereken detayları uygulamayı kullanırken atmanız daha iyi olucaktır.)</h5>
+                                <div class="card-body">
+                                    <form action="#" > <div class="mb-3">
+                                            <label for="konu" class="form-label">Konu</label>
+                                            <input type="text" class="form-control" id="konu" name="konu" placeholder="Destek talebinizin konusu">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="metin" class="form-label">Metin</label>
+                                            <textarea class="form-control" id="metin" name="metin" rows="5" placeholder="Destek talebinizin detayları"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Gönder</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+
+
+
+                <!-- Footer -->
+                <%- include('partials/footer') %>
+                    <!-- / Footer -->
+                    <div class="content-backdrop fade"></div>
+        </div>
+        <!-- / Layout page -->
+        <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+
+        </div>
+        <!-- / Layout wrapper -->
+
+        <%- include('partials/script') %>
+</body>
+
+</html>
