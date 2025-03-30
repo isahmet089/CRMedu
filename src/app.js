@@ -46,50 +46,50 @@ dbConnect();
 app.use('/auth', authRoutes);
 
 app.get("/", (req, res) => {
-    res.redirect("/home");
+    res.redirect("home");
 }
 );
 
 // Oturum kontrolü gerektiren endpointler
 app.get('/index', authMiddleware, (req, res) => 
-    res.render('index', { title: 'Home' })
+    res.render('dashboard/index', { title: 'Home' })
 );
 
 app.get('/costumer-add', authMiddleware, checkRole('student'), (req, res) => 
-    res.render('costumerAdd')
+    res.render('dashboard/costumerAdd')
 );
 
 app.get('/costumer-list', authMiddleware, (req, res) => 
-    res.render('costumerList')
+    res.render('dashboard/costumerList')
 );
 
 app.get('/user-list', authMiddleware, (req, res) => 
-    res.render('userList')
+    res.render('dashboard/userList')
 );
 
 app.get('/user-add', authMiddleware, (req, res) => 
-    res.render('userAdd')
+    res.render('dashboard/userAdd')
 );
 
 app.get('/support', authMiddleware, (req, res) => 
-    res.render('support')
+    res.render('dashboard/support')
 );
 
 app.get('/documentation', authMiddleware, (req, res) => 
-    res.render('doc')
+    res.render('dashboard/doc')
 );
 
 // Giriş yapmayanların erişebileceği endpointler
 app.get('/login', (req, res) => 
-    res.render('login')
+    res.render('dashboard/login')
 );
-// Giriş yapmayanların erişebileceği endpointler
+
 app.get('/register', (req, res) => 
-  res.render('register')
+  res.render('dashboard/register')
 );
 
 app.get('/forgotPassword', (req, res) => {
-    res.render('forgotPassword');
+    res.render('dashboard/forgotPassword');
 });
 
 
