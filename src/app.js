@@ -8,8 +8,13 @@ const dbConnect = require('./config/dbConfig');
 const authRoutes = require('./routes/authRoutes.js');
 const {authMiddleware, sessionMiddleware} = require('./middleware/authMiddleware');
 const checkRole = require('./middleware/checkRole.js');
+const morgan = require('morgan');
 const PORT = process.env.PORT || 3000;
 const app = express();
+
+// Views klasörünün yolunu belirt
+app.set('views', path.join(__dirname, 'views'));
+app.set("view engine", "ejs");
 
 const store = new MongoDBStore({  
     uri: process.env.DB_URL,
@@ -26,12 +31,14 @@ app.use(
     })
 );
 
+app.use(morgan('dev')); // Morgan middleware'i kullanarak istekleri logla
 app.use(sessionMiddleware); // Tüm endpointler için sessionMiddleware'i kullan 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static('public'));
-app.use(express.static('uploads'));
-app.set("view engine", "ejs");
+
+// Statik dosyaların yollarını düzelt
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'uploads')));
 
 // MongoDB bağlantısını burada yapıyoruz
 dbConnect();
