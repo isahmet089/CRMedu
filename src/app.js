@@ -45,8 +45,8 @@ dbConnect();
 
 app.use('/auth', authRoutes);
 
-app.get("/",authMiddleware, (req, res) => {
-    res.redirect("/index");
+app.get("/", (req, res) => {
+    res.redirect("/home");
 }
 );
 
@@ -87,12 +87,48 @@ app.get('/login', (req, res) =>
 app.get('/register', (req, res) => 
   res.render('register')
 );
-app.get('/', (req, res) => {
-    res.redirect('/login'); // veya res.render('index');
-});
+
 app.get('/forgotPassword', (req, res) => {
     res.render('forgotPassword');
 });
+
+
+/// wwww 
+app.get('/home',(req, res) => {
+    res.render('www/home');
+}
+);
+app.get('/about',(req, res) => {
+    res.render('www/about');
+}
+);
+app.get('/blog',(req, res) => {
+    res.render('www/blog');
+}
+);
+app.get('/instructors',(req, res) => {
+    res.render('www/instructors');
+}
+);
+app.get('/courses',(req, res) => {
+    res.render('www/courses');
+}
+);
+app.get('/course',(req, res) => {
+    res.render('www/course');
+}
+);
+app.get('/blogOne',(req, res) => {
+    res.render('www/blogOne');
+}
+);
+app.get('/contact',(req, res) => {
+    res.render('www/contact');
+}
+);
+
+
+
 app.listen(PORT, () =>
     console.log(`Example app listening on port ${PORT}!`
 ));
