@@ -1,5 +1,6 @@
 // app.js
-require("dotenv").config();
+const path = require('path');
+require("dotenv").config({ path: path.join(__dirname, '../.env') });
 const express = require('express');
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
@@ -7,12 +8,11 @@ const dbConnect = require('./config/dbConfig');
 const authRoutes = require('./routes/authRoutes.js');
 const {authMiddleware, sessionMiddleware} = require('./middleware/authMiddleware');
 const checkRole = require('./middleware/checkRole.js');
-
+const PORT = process.env.PORT || 3000;
 const app = express();
-dbConnect();
 
-const store = new MongoDBStore({
-    uri: process.env.MONGO_URI,
+const store = new MongoDBStore({  
+    uri: process.env.DB_URL,
     collection: "sessions",
 });
 
@@ -32,6 +32,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.use(express.static('uploads'));
 app.set("view engine", "ejs");
+
+// MongoDB bağlantısını burada yapıyoruz
+dbConnect();
 
 app.use('/auth', authRoutes);
 
@@ -72,6 +75,6 @@ app.get('/login', (req, res) =>
 app.get('/register', (req, res) => 
   res.render('register')
 );
-app.listen(process.env.PORT, () =>
-    console.log(`Example app listening on port ${process.env.PORT}!`
+app.listen(PORT, () =>
+    console.log(`Example app listening on port ${PORT}!`
 ));
