@@ -91,6 +91,9 @@ app.get('/register', (req, res) =>
 app.get('/forgotPassword', (req, res) => {
     res.render('dashboard/forgotPassword');
 });
+app.get('/blank', (req, res) => {
+    res.render('dashboard/blank');
+});
 
 
 /// wwww 
