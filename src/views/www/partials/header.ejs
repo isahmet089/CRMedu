@@ -10,6 +10,60 @@
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
+    <div>
+        <a class="btn-whats pulse" href="https://api.whatsapp.com/send?phone=905342039298&text=deneme mesajı gönder" target="_blank">
+          <i class="fa fa-whatsapp"></i></a>
+      </div>
+      <style>
+        .pulse i {
+  position: relative;
+  z-index: 20;
+  top: 16px;
+  font-size: 30px;
+}
+.pulse {
+  position: fixed;
+  cursor: pointer;
+  display: block;
+  width: 60px !important;
+  height: 60px;
+  bottom: 18px; /* WhatsApp butonunu yukarı kaydır */
+  right: 100px;
+  background-color: rgba(0, 200, 0, 1);
+  color: white;
+  border-radius: 50px;
+  text-align: center;
+  transition-duration: 0.5s;
+  animation: pulse-btn 3s infinite;
+  z-index: 9000;
+}
+
+.pulse:hover {
+  background-color: rgba(0, 150, 0, 1);
+  color: white;
+}
+
+.my-float {
+  margin-top: 15px;
+}
+
+@-webkit-keyframes pulse-btn {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 200, 0, 1);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 20px rgba(0, 200, 0, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 200, 0, 0);
+  }
+}
+
+.pulse a {
+  color: #fff;
+}
+
+      </style>
     <!--End of Tawk.to Script-->
 <!-- Header -->
 <header class="header">		
