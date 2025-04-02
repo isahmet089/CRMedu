@@ -68,270 +68,206 @@
                                     </div>
                                     <hr class="my-0" />
                                     <div class="card-body">
-                                        <form id="formAccountSettings" method="POST" onsubmit="return false">
+                                        <form id="addCustomerForm" method="POST" action="/costumer-add">
                                             <div class="row">
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="firstName" class="form-label">First Name</label>
-                                                    <input class="form-control" type="text" id="firstName"
-                                                        name="firstName" value="John" autofocus />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="lastName" class="form-label">Last Name</label>
-                                                    <input class="form-control" type="text" name="lastName"
-                                                        id="lastName" value="Doe" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="email" class="form-label">E-mail</label>
-                                                    <input class="form-control" type="text" id="email" name="email"
-                                                        value="john.doe@example.com"
-                                                        placeholder="john.doe@example.com" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="organization" class="form-label">Organization</label>
-                                                    <input type="text" class="form-control" id="organization"
-                                                        name="organization" value="ThemeSelection" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="customerName" class="form-label">Customer Name</label>
-                                                    <input type="text" class="form-control" name="adi" id="customerName"
-                                                        value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="customerSurname" class="form-label">Customer
-                                                        Surname</label>
-                                                    <input type="text" class="form-control" name="soyadi"
-                                                        id="customerSurname" value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="phoneNumber" class="form-label">Phone Number</label>
-                                                    <input type="text" class="form-control" name="sira" id="phoneNumber"
-                                                        value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="oenNumber" class="form-label">OEN Number</label>
-                                                    <input type="text" class="form-control" name="fiyat" id="oenNumber"
-                                                        value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="customerEmail" class="form-label">Email</label>
-                                                    <input type="text" class="form-control" name="aciklama"
-                                                        id="customerEmail" value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="approvalDate" class="form-label">Approval Date</label>
-                                                    <input type="text" class="form-control" name="indir"
-                                                        id="approvalDate" value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="remark" class="form-label">Remark</label>
-                                                    <input type="text" class="form-control" name="stok" id="remark"
-                                                        value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="dateOfBirth" class="form-label">Date of Birth</label>
-                                                    <input type="date" class="form-control" name="dogum"
-                                                        id="dateOfBirth" value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="status" class="form-label">Status</label>
-                                                    <select class="form-select" name="durum" id="status">
-                                                        <option value="in-progress">In Progress</option>
-                                                        <option value="approved">Approved</option>
-                                                        <option value="completed">Completed</option>
-                                                        <option value="others">Others</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="gender" class="form-label">Gender</label>
-                                                    <select class="form-select" name="cinsiyet" id="gender">
-                                                        <option value="male">Male</option>
-                                                        <option value="female">Female</option>
-                                                        <option value="other">Other</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="language" class="form-label">Student Language</label>
-                                                    <select class="form-select" name="ogr_dil" id="language">
-                                                        <option value="english">English</option>
-                                                        <option value="french">French</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="streetAddress" class="form-label">Street Address</label>
-                                                    <input type="text" class="form-control" name="sokak"
-                                                        id="streetAddress" value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="apartment" class="form-label">Apartment</label>
-                                                    <input type="text" class="form-control" name="apart" id="apartment"
-                                                        value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="city" class="form-label">City</label>
-                                                    <input type="text" class="form-control" name="sehir" id="city"
-                                                        value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="province" class="form-label">Province</label>
-                                                    <input type="text" class="form-control" name="province"
-                                                        id="province" value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="postalCode" class="form-label">Postal Code</label>
-                                                    <input type="text" class="form-control" name="postal"
-                                                        id="postalCode" value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="emergencyPhone" class="form-label">Emergency
-                                                        Phone</label>
-                                                    <input type="text" class="form-control" name="acil_tel"
-                                                        id="emergencyPhone" value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="emergencyName" class="form-label">Emergency Name</label>
-                                                    <input type="text" class="form-control" name="acil_isim"
-                                                        id="emergencyName" value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="emergencyRelationship" class="form-label">Emergency
-                                                        Relationship</label>
-                                                    <input type="text" class="form-control" name="acil_iliski"
-                                                        id="emergencyRelationship" value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="oanNumber" class="form-label">OAN Number</label>
-                                                    <input type="text" class="form-control" name="oan_number"
-                                                        id="oanNumber" value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="financialAssistance" class="form-label">Financial
-                                                        Assistance</label>
-                                                    <select class="form-select" name="mali" id="financialAssistance">
-                                                        <option value="ei">EI/Employment Ontario</option>
-                                                        <option value="osap">OSAP</option>
-                                                        <option value="selfpay">Self Pay</option>
-                                                        <option value="none">None</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="programName" class="form-label">Program Name</label>
-                                                    <input type="text" class="form-control" name="program"
-                                                        id="programName" value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="collegeName" class="form-label">College Name</label>
-                                                    <select class="form-select" name="kolej" id="collegeName">
-                                                        <option value="Academy of Learning - Bay">Academy of Learning -
-                                                            Bay</option>
-                                                        <option value="Academy of Learning - Brampton">Academy of
-                                                            Learning - Brampton</option>
-                                                        <option value="Citi College - Toronto">Citi College - Toronto
-                                                        </option>
-                                                        <option value="Citi College - Mississauga">Citi College -
-                                                            Mississauga</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="programStartDate" class="form-label">Program Start
-                                                        Date</label>
-                                                    <input type="date" class="form-control" name="program_b"
-                                                        id="programStartDate" value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="classSchedule" class="form-label">Class Schedule</label>
-                                                    <select class="form-select" name="sinif" id="classSchedule">
-                                                        <option value="Evening">Evening</option>
-                                                        <option value="Morning">Morning</option>
-                                                        <option value="Weekend">Weekend</option>
-                                                        <option value="Hybrid">Hybrid</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="careerInterest" class="form-label">What Career Student
-                                                        is Interested?</label>
-                                                    <input type="text" class="form-control" name="kariyer"
-                                                        id="careerInterest" value="" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="grade12Status" class="form-label">What is Student Grade
-                                                        12 Status?</label>
-                                                    <select class="form-select" name="sinif_durum" id="grade12Status">
-                                                        <option value="Yes, In Canada">Yes, In Canada</option>
-                                                        <option value="No, Outside Canada">No, Outside Canada</option>
-                                                        <option value="No, but Im 19 Years of age">No, but I'm 19 Years
-                                                            of age</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="educationAfterGrade12" class="form-label">Did you
-                                                        continue education after Grade 12?</label>
-                                                    <select class="form-select" name="egitim_dev"
-                                                        id="educationAfterGrade12">
-                                                        <option value="yes">YES</option>
-                                                        <option value="no">NO</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="workExperience" class="form-label">Have any work
-                                                        Experience?</label>
-                                                    <select class="form-select" name="is_deneyim" id="workExperience">
-                                                        <option value="yes">YES</option>
-                                                        <option value="no">NO</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="coursePurpose" class="form-label">Purpose of doing
-                                                        Course</label>
-                                                    <select class="form-select" name="amac" id="coursePurpose">
-                                                        <option value="Changing Career">Changing Career</option>
-                                                        <option value="Local Certification">Local Certification</option>
-                                                        <option value="Upgrading Skills">Upgrading Skills</option>
-                                                        <option value="Other">Other</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="purposeStatement" class="form-label">Brief Statement of
-                                                        Purpose</label>
-                                                    <textarea class="form-control" name="onaciklama"
-                                                        id="purposeStatement"></textarea>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="interviewedBy" class="form-label">Interviewed By</label>
-                                                    <select class="form-select" name="roportaj" id="interviewedBy">
-                                                        <option value="Mustafa Yuksel">Mustafa Yuksel</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="applicationStatus" class="form-label">Application
-                                                        Status</label>
-                                                    <select class="form-select" name="uyg_durum" id="applicationStatus">
-                                                        <option value="OSAP Application Started and Completed">OSAP
-                                                            Application Started and Completed</option>
-                                                        <option value="OSAP Application Started But Not Completed">OSAP
-                                                            Application Started But Not Completed</option>
-                                                        <option value="OSAP Application Not Started">OSAP Application
-                                                            Not Started</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="studentStatus" class="form-label">Student Current
-                                                        Status</label>
-                                                    <select class="form-select" name="ogr_durum" id="studentStatus">
-                                                        <option value="Citizen">Citizen</option>
-                                                        <option value="Permanent Resident">Permanent Resident</option>
-                                                        <option value="Protected Person">Protected Person</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="note" class="form-label">Note</label>
-                                                    <textarea class="form-control" name="note" id="note"></textarea>
-                                                </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="customerName" class="form-label">Customer Name</label>
+                                                <input type="text" class="form-control" name="adi" id="customerName" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="customerSurname" class="form-label">Customer Surname</label>
+                                                <input type="text" class="form-control" name="soyadi" id="customerSurname" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="phoneNumber" class="form-label">Phone Number</label>
+                                                <input type="text" class="form-control" name="sira" id="phoneNumber" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="oenNumber" class="form-label">OEN Number</label>
+                                                <input type="text" class="form-control" name="fiyat" id="oenNumber" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="customerEmail" class="form-label">Email</label>
+                                                <input type="text" class="form-control" name="aciklama" id="customerEmail" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="approvalDate" class="form-label">Approval Date</label>
+                                                <input type="text" class="form-control" name="indir" id="approvalDate" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="remark" class="form-label">Remark</label>
+                                                <input type="text" class="form-control" name="stok" id="remark" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="dateOfBirth" class="form-label">Date of Birth</label>
+                                                <input type="date" class="form-control" name="dogum" id="dateOfBirth" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="status" class="form-label">Status</label>
+                                                <select class="form-select" name="durum" id="status">
+                                                  <option value="in-progress">In Progress</option>
+                                                  <option value="approved">Approved</option>
+                                                  <option value="completed">Completed</option>
+                                                  <option value="others">Others</option>
+                                                </select>
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="gender" class="form-label">Gender</label>
+                                                <select class="form-select" name="cinsiyet" id="gender">
+                                                  <option value="male">Male</option>
+                                                  <option value="female">Female</option>
+                                                  <option value="other">Other</option>
+                                                </select>
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="language" class="form-label">Student Language</label>
+                                                <select class="form-select" name="ogr_dil" id="language">
+                                                  <option value="english">English</option>
+                                                  <option value="french">French</option>
+                                                </select>
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="streetAddress" class="form-label">Street Address</label>
+                                                <input type="text" class="form-control" name="sokak" id="streetAddress" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="apartment" class="form-label">Apartment</label>
+                                                <input type="text" class="form-control" name="apart" id="apartment" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="city" class="form-label">City</label>
+                                                <input type="text" class="form-control" name="sehir" id="city" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="province" class="form-label">Province</label>
+                                                <input type="text" class="form-control" name="province" id="province" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="postalCode" class="form-label">Postal Code</label>
+                                                <input type="text" class="form-control" name="postal" id="postalCode" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="emergencyPhone" class="form-label">Emergency Phone</label>
+                                                <input type="text" class="form-control" name="acil_tel" id="emergencyPhone" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="emergencyName" class="form-label">Emergency Name</label>
+                                                <input type="text" class="form-control" name="acil_isim" id="emergencyName" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="emergencyRelationship" class="form-label">Emergency Relationship</label>
+                                                <input type="text" class="form-control" name="acil_iliski" id="emergencyRelationship" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="oanNumber" class="form-label">OAN Number</label>
+                                                <input type="text" class="form-control" name="oan_number" id="oanNumber" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="financialAssistance" class="form-label">Financial Assistance</label>
+                                                <select class="form-select" name="mali" id="financialAssistance">
+                                                  <option value="ei">EI/Employment Ontario</option>
+                                                  <option value="osap">OSAP</option>
+                                                  <option value="selfpay">Self Pay</option>
+                                                  <option value="none">None</option>
+                                                </select>
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="programName" class="form-label">Program Name</label>
+                                                <input type="text" class="form-control" name="program" id="programName" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="collegeName" class="form-label">College Name</label>
+                                                <select class="form-select" name="kolej" id="collegeName">
+                                                  <option value="Academy of Learning - Bay">Academy of Learning - Bay</option>
+                                                  <option value="Academy of Learning - Brampton">Academy of Learning - Brampton</option>
+                                                  <option value="Citi College - Toronto">Citi College - Toronto</option>
+                                                  <option value="Citi College - Mississauga">Citi College - Mississauga</option>
+                                                </select>
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="programStartDate" class="form-label">Program Start Date</label>
+                                                <input type="date" class="form-control" name="program_b" id="programStartDate" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="classSchedule" class="form-label">Class Schedule</label>
+                                                <select class="form-select" name="sinif" id="classSchedule">
+                                                  <option value="Evening">Evening</option>
+                                                  <option value="Morning">Morning</option>
+                                                  <option value="Weekend">Weekend</option>
+                                                  <option value="Hybrid">Hybrid</option>
+                                                </select>
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="careerInterest" class="form-label">What Career Student is Interested?</label>
+                                                <input type="text" class="form-control" name="kariyer" id="careerInterest" value="" />
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="grade12Status" class="form-label">What is Student Grade 12 Status?</label>
+                                                <select class="form-select" name="sinif_durum" id="grade12Status">
+                                                  <option value="Yes, In Canada">Yes, In Canada</option>
+                                                  <option value="No, Outside Canada">No, Outside Canada</option>
+                                                  <option value="No, but Im 19 Years of age">No, but I'm 19 Years of age</option>
+                                                </select>
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="educationAfterGrade12" class="form-label">Did you continue education after Grade 12?</label>
+                                                <select class="form-select" name="egitim_dev" id="educationAfterGrade12">
+                                                  <option value="yes">YES</option>
+                                                  <option value="no">NO</option>
+                                                </select>
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="workExperience" class="form-label">Have any work Experience?</label>
+                                                <select class="form-select" name="is_deneyim" id="workExperience">
+                                                  <option value="yes">YES</option>
+                                                  <option value="no">NO</option>
+                                                </select>
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="coursePurpose" class="form-label">Purpose of doing Course</label>
+                                                <select class="form-select" name="amac" id="coursePurpose">
+                                                  <option value="Changing Career">Changing Career</option>
+                                                  <option value="Local Certification">Local Certification</option>
+                                                  <option value="Upgrading Skills">Upgrading Skills</option>
+                                                  <option value="Other">Other</option>
+                                                </select>
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="purposeStatement" class="form-label">Brief Statement of Purpose</label>
+                                                <textarea class="form-control" name="onaciklama" id="purposeStatement"></textarea>
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="interviewedBy" class="form-label">Interviewed By</label>
+                                                <select class="form-select" name="roportaj" id="interviewedBy">
+                                                  <option value="Mustafa Yuksel">Mustafa Yuksel</option>
+                                                </select>
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="applicationStatus" class="form-label">Application Status</label>
+                                                <select class="form-select" name="uyg_durum" id="applicationStatus">
+                                                  <option value="OSAP Application Started and Completed">OSAP Application Started and Completed</option>
+                                                  <option value="OSAP Application Started But Not Completed">OSAP Application Started But Not Completed</option>
+                                                  <option value="OSAP Application Not Started">OSAP Application Not Started</option>
+                                                </select>
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="studentStatus" class="form-label">Student Current Status</label>
+                                                <select class="form-select" name="ogr_durum" id="studentStatus">
+                                                  <option value="Citizen">Citizen</option>
+                                                  <option value="Permanent Resident">Permanent Resident</option>
+                                                  <option value="Protected Person">Protected Person</option>
+                                                </select>
+                                              </div>
+                                              <div class="mb-3 col-md-6">
+                                                <label for="note" class="form-label">Note</label>
+                                                <textarea class="form-control" name="note" id="note"></textarea>
+                                              </div>
                                             </div>
                                             <div class="mt-2">
-                                                <button type="submit" class="btn btn-primary me-2">Add Costumer</button>
-                                                <button type="reset" class="btn btn-outline-secondary">Cancel</button>
+                                              <button type="submit" class="btn btn-primary me-2" >Add Customer</button>
+                                              <button type="reset" class="btn btn-outline-secondary">Cancel</button>
                                             </div>
-                                        </form>
+                                          </form>
                                     </div>
                                 </div>
                             </div>

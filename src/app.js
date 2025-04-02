@@ -40,6 +40,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'uploads')));
 
+// routeslar
+
+
+const costumerRoutes = require('./routes/costumerRoutes.js');
+app.use('/', costumerRoutes);
 // MongoDB bağlantısını burada yapıyoruz
 dbConnect();
 

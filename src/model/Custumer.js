@@ -1,0 +1,43 @@
+const mongoose = require('mongoose');
+
+const customerSchema = new mongoose.Schema({
+  adi: { type: String },
+  soyadi: { type: String },
+  sira: { type: String },
+  fiyat: { type: String },
+  aciklama: { type: String },
+  indir: { type: String },
+  stok: { type: String },
+  dogum: { type: Date },
+  durum: { type: String, enum: ['in-progress', 'approved', 'completed', 'others'] },
+  cinsiyet: { type: String, enum: ['male', 'female', 'other'] },
+  ogr_dil: { type: String, enum: ['english', 'french'] },
+  sokak: { type: String },
+  apart: { type: String },
+  sehir: { type: String },
+  province: { type: String },
+  postal: { type: String },
+  acil_tel: { type: String },
+  acil_isim: { type: String },
+  acil_iliski: { type: String },
+  oan_number: { type: String },
+  mali: { type: String, enum: ['ei', 'osap', 'selfpay', 'none'] },
+  program: { type: String },
+  kolej: { type: String, enum: ['Academy of Learning - Bay', 'Academy of Learning - Brampton', 'Citi College - Toronto', 'Citi College - Mississauga'] },
+  program_b: { type: Date },
+  sinif: { type: String, enum: ['Evening', 'Morning', 'Weekend', 'Hybrid'] },
+  kariyer: { type: String },
+  sinif_durum: { type: String, enum: ['Yes, In Canada', 'No, Outside Canada', "No, but Im 19 Years of age"] },
+  egitim_dev: { type: String, enum: ['yes', 'no'] },
+  is_deneyim: { type: String, enum: ['yes', 'no'] },
+  amac: { type: String, enum: ['Changing Career', 'Local Certification', 'Upgrading Skills', 'Other'] },
+  onaciklama: { type: String },
+  roportaj: { type: String, enum: ['Mustafa Yuksel'] },
+  uyg_durum: { type: String, enum: ['OSAP Application Started and Completed', 'OSAP Application Started But Not Completed', 'OSAP Application Not Started'] },
+  ogr_durum: { type: String, enum: ['Citizen', 'Permanent Resident', 'Protected Person'] },
+  note: { type: String },
+  status: { type: Boolean, default: true },
+});
+
+
+module.exports = mongoose.model("Custumer", customerSchema);
